@@ -13,17 +13,17 @@ class CountPage extends HookWidget {
       appBar: AppBar(
         title: const Text('CountPage'),
       ),
-      body: Column(
-        children: [
-          const Text('countpageだよ'),
-          Text(state.counts.toString()),
-          ElevatedButton(
-            onPressed: () {
-              count.increment();
-            },
-            child: const Text('increment'),
-          )
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            const Text('countpageだよ'),
+            Text(state.counts.toString()),
+            ElevatedButton(
+              onPressed: state.isDisabled ? null : count.increment,
+              child: const Text('increment'),
+            )
+          ],
+        ),
       ),
     );
   }
