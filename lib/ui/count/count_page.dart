@@ -21,7 +21,14 @@ class CountPage extends HookWidget {
             ElevatedButton(
               onPressed: state.isDisabled ? null : count.increment,
               child: const Text('increment'),
-            )
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                count.disabledCount();
+              },
+              icon: const Icon(Icons.ac_unit),
+              label: const Icon(Icons.ac_unit),
+            ),
           ],
         ),
       ),

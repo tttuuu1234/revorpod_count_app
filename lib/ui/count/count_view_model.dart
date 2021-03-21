@@ -9,6 +9,6 @@ class CountViewModel extends StateNotifier<Count> {
   }
 
   void disabledCount() {
-    state = state.copyWith(isDisabled: true);
+    state = state.copyWith(isDisabled: !state.isDisabled);
   }
 }
